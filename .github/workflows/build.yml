@@ -26,6 +26,8 @@ jobs:
           set(SDL2_LIBRARIES "")
           set(OPENGL_LIBRARIES "")
           CMAKEEOF
+          sed -i 's/NO_DEFAULT_PATH)/NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)/' engine/CMakeLists.txt
+          grep -n NO_CMAKE_FIND_ROOT_PATH engine/CMakeLists.txt
       - name: Compilar para WebAssembly
         shell: bash
         run: |
