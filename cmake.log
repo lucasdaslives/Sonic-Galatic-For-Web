@@ -1,0 +1,4 @@
+configure: cmake -S engine -B build -DCMAKE_BUILD_TYPE=Release -DUSING_OPENGL=OFF -DUSE_OPEN_ASSET_IMPORT_LIBRARY=OFF -DENABLE_USING_LINENOISE=OFF -DDEVELOPER_MODE=OFF -DEXECUTABLE_NAME=HatchGameEngine "-DCMAKE_C_FLAGS=-sUSE_SDL=2 -sUSE_ZLIB=1" "-DCMAKE_CXX_FLAGS=-sUSE_SDL=2 -sUSE_ZLIB=1" "-DCMAKE_EXE_LINKER_FLAGS=-sUSE_SDL=2 -sUSE_ZLIB=1 -sASYNCIFY=1 -sALLOW_MEMORY_GROWTH=1 -sINITIAL_MEMORY=536870912 -sMAXIMUM_MEMORY=2GB -sFORCE_FILESYSTEM=1 -sINVOKE_RUN=0 -sEXIT_RUNTIME=0 -sEXPORTED_RUNTIME_METHODS=FS,callMain -lidbfs.js" -DCMAKE_TOOLCHAIN_FILE=/home/runner/work/_temp/84da5574-9060-421e-a69e-6777cdc19aaf/emsdk-main/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake -DCMAKE_CROSSCOMPILING_EMULATOR=/home/runner/work/_temp/84da5574-9060-421e-a69e-6777cdc19aaf/emsdk-main/node/24.19.0_64bit/bin/node
+-- Configuring done (1.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/runner/work/Sonic-Galatic-For-Web/Sonic-Galatic-For-Web/build

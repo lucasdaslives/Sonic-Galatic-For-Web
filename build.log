@@ -1,0 +1,65 @@
+[  1%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Application.cpp.o
+[  1%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Audio/AudioManager.cpp.o
+[  1%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Audio/AudioPlayback.cpp.o
+[  2%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/Bytecode.cpp.o
+shared:INFO: (Emscripten: Running sanity checks)
+ports:INFO: retrieving port: sdl2 from https://github.com/libsdl-org/SDL/archive/release-2.30.9.zip
+ports:INFO: unpacking port: sdl2
+cache:INFO: generating port: sysroot/lib/wasm32-emscripten/libSDL2.a... (this will be cached in "/home/runner/work/_temp/84da5574-9060-421e-a69e-6777cdc19aaf/emsdk-main/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/libSDL2.a" for subsequent builds)
+system_libs:INFO: compiled 118 inputs in 10.85s
+cache:INFO:  - ok
+ports:INFO: retrieving port: zlib from https://github.com/madler/zlib/archive/refs/tags/v1.2.13.tar.gz
+ports:INFO: unpacking port: zlib
+cache:INFO: generating port: sysroot/lib/wasm32-emscripten/libz.a... (this will be cached in "/home/runner/work/_temp/84da5574-9060-421e-a69e-6777cdc19aaf/emsdk-main/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/libz.a" for subsequent builds)
+system_libs:INFO: compiled 15 inputs in 1.20s
+cache:INFO:  - ok
+[  3%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/BytecodeDebugger.cpp.o
+[  3%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/Compiler.cpp.o
+[  4%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/GarbageCollector.cpp.o
+[  4%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/ScriptEntity.cpp.o
+[  5%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/ScriptManager.cpp.o
+[  6%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/SourceFileMap.cpp.o
+[  6%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/StandardLibrary.cpp.o
+[  7%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/TypeImpl/ArrayImpl.cpp.o
+[  8%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/TypeImpl/EntityImpl.cpp.o
+[  8%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/TypeImpl/FontImpl.cpp.o
+[  9%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/TypeImpl/FunctionImpl.cpp.o
+[  9%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/TypeImpl/InstanceImpl.cpp.o
+[ 10%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/TypeImpl/MapImpl.cpp.o
+[ 11%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/TypeImpl/MaterialImpl.cpp.o
+[ 11%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/TypeImpl/ShaderImpl.cpp.o
+[ 12%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/TypeImpl/StreamImpl.cpp.o
+[ 13%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/TypeImpl/StringImpl.cpp.o
+[ 13%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/TypeImpl/TextureImpl.cpp.o
+[ 14%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/TypeImpl/TypeImpl.cpp.o
+[ 14%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/Types.cpp.o
+[ 15%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/VMThread.cpp.o
+[ 16%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/VMThreadDebugger.cpp.o
+[ 16%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/Value.cpp.o
+[ 17%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Bytecode/ValuePrinter.cpp.o
+[ 18%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Data/DefaultFonts.cpp.o
+[ 18%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Diagnostics/Clock.cpp.o
+[ 19%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Diagnostics/Log.cpp.o
+[ 19%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Diagnostics/Memory.cpp.o
+[ 20%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Diagnostics/MemoryPools.cpp.o
+[ 21%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Diagnostics/PerformanceMeasure.cpp.o
+[ 21%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Diagnostics/PerformanceViewer.cpp.o
+[ 22%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Diagnostics/RemoteDebug.cpp.o
+[ 22%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Error.cpp.o
+[ 23%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Extensions/Discord.cpp.o
+[ 24%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Filesystem/Directory.cpp.o
+[ 24%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Filesystem/File.cpp.o
+[ 25%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Filesystem/Path.cpp.o
+In file included from /home/runner/work/Sonic-Galatic-For-Web/Sonic-Galatic-For-Web/engine/source/Engine/Extensions/Discord.cpp:10:
+/home/runner/work/Sonic-Galatic-For-Web/Sonic-Galatic-For-Web/engine/source/Libraries/discord_game_sdk.h:814:3: error: unknown type name 'IDXGISwapChain'
+  814 |                 IDXGISwapChain* swapchain,
+      |                 ^
+/home/runner/work/Sonic-Galatic-For-Web/Sonic-Galatic-For-Web/engine/source/Libraries/discord_game_sdk.h:817:77: error: unknown type name 'MSG'
+  817 |         void(DISCORD_API* forward_message)(struct IDiscordOverlayManager* manager, MSG* message);
+      |                                                                                    ^
+[ 26%] Building CXX object CMakeFiles/HatchGameEngine.dir/source/Engine/Filesystem/VFS/ArchiveVFS.cpp.o
+2 errors generated.
+gmake[2]: *** [CMakeFiles/HatchGameEngine.dir/build.make:635: CMakeFiles/HatchGameEngine.dir/source/Engine/Extensions/Discord.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:87: CMakeFiles/HatchGameEngine.dir/all] Error 2
+gmake: *** [Makefile:91: all] Error 2
