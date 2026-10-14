@@ -1,0 +1,66 @@
+name: Build Sonic Galactic (web)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: 3.1.74
+      - name: Baixar engine
+        run: git clone --depth 1 https://github.com/HatchGameEngine/HatchGameEngine.git engine
+      - name: Criar alvo Emscripten na engine
+        run: |
+          cat > engine/cmake/Platforms/Emscripten.cmake <<'CMAKEEOF'
+          add_executable(${PROJECT_NAME} ${HATCH_SOURCES})
+          target_compile_definitions(${PROJECT_NAME} PRIVATE -DLINUX)
+          set(SDL2_INCLUDE_DIRS "")
+          set(SDL2_LIBRARIES "")
+          set(OPENGL_LIBRARIES "")
+          CMAKEEOF
+      - name: Compilar para WebAssembly
+        shell: bash
+        run: |
+          emcmake cmake -S engine -B build -DCMAKE_BUILD_TYPE=Release \
+            -DUSING_OPENGL=OFF -DUSE_OPEN_ASSET_IMPORT_LIBRARY=OFF \
+            -DENABLE_USING_LINENOISE=OFF -DDEVELOPER_MODE=OFF -DEXECUTABLE_NAME=HatchGameEngine \
+            -DCMAKE_C_FLAGS="-sUSE_SDL=2 -sUSE_ZLIB=1" \
+            -DCMAKE_CXX_FLAGS="-sUSE_SDL=2 -sUSE_ZLIB=1" \
+            -DCMAKE_EXE_LINKER_FLAGS="-sUSE_SDL=2 -sUSE_ZLIB=1 -sASYNCIFY=1 -sALLOW_MEMORY_GROWTH=1 -sINITIAL_MEMORY=536870912 -sMAXIMUM_MEMORY=2GB -sFORCE_FILESYSTEM=1 -sINVOKE_RUN=0 -sEXIT_RUNTIME=0 -sEXPORTED_RUNTIME_METHODS=FS,callMain -lidbfs.js" \
+            2>&1 | tee cmake.log
+          cmake --build build -j4 2>&1 | tee build.log
+      - name: Montar site
+        run: |
+          mkdir site
+          cp web/index.html site/
+          mkdir site/data
+          i=0
+          for f in $(ls | grep -E 'hatch\.part' | sort -V); do cp "$f" "site/data/Data.hatch.part$i"; i=$((i+1)); done
+          echo "partes copiadas: $i"
+          find build -maxdepth 2 \( -name '*.js' -o -name '*.wasm' \) -exec cp {} site/ \;
+          ls -la site
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: logs
+          path: |
+            cmake.log
+            build.log
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/deploy-pages@v4
